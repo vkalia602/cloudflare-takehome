@@ -4,7 +4,9 @@ In this assignment you will build a prototype web service to compute account bal
 
 An account balance represents the amount of money in a specific account at a given point in time. It takes into account both deposits (credits) and withdrawals (debits) made to the account. If the credits exceed the debits, the account has a positive balance, indicating surplus funds. Conversely, if the debits exceed the credits, the account has a negative balance, suggesting a deficit.
 
-Users should be able to send a request with an `Account ID` and a `date` as input, and receive the balance as of that date as output. Additionally, users should be able to ask for balances as of named dates such as "Q1" or "Q3", corresponding to the end dates for those periods. Beyond that, the design of the API or any additional routes you think might be useful is up to you.
+Users should be able to send a request with an `Account ID` and a `Date` as input, and receive the balance as of that date as output. Optionally, the user should be able to pass in a `Region ID` to filter the results to only transactions in that country's accounts.
+
+Additionally, users should be able to ask for balances as of named dates such as "Q1" or "Q3", corresponding to the end dates for those periods. Beyond that, the design of the API or any additional routes you think might be useful is up to you.
 
 
 # Instructions
@@ -20,6 +22,7 @@ Users should be able to send a request with an `Account ID` and a `date` as inpu
 - The input data are small enough that you can hold their contents in memory. Whether you put them in a database or a different data structure is up to you. We care more about the data layout or schemas you choose and your ability to explain your decisions than about the runtime of your prototype.
 - You can assume the data is static and will not change while your service is running.
 - Ask questions if you have them. The data model is intentionally vague, so you will need to make some assumptions. Document your assumptions in your code and in the follow-up questions.
+- It's fine to use Google or StackOverflow to look up syntax or documentation. If you use ChatGPT or similar tools, please share the prompts you used in the follow-up questions.
 
 
 # Specification
@@ -28,6 +31,7 @@ You will build the following functionality:
   - [ ] A web server that can load transaction and account data from the provided files
   - [ ] Account balances are correctly calculated as the sum of all transaction amounts prior to a given date.
   - [ ] A route that accepts an `Account ID` and a `date` as input, and returns the account balance as of that date.
+  - [ ] A way for the user to filter the results to only transactions in a specific region by passing in `region ID`
   - [ ] A route that accepts an `Account ID` and a `named date` as input, and returns the account balance as of that date.
 
 # Getting Started
